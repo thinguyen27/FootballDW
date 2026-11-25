@@ -1,0 +1,307 @@
+<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e83ccf01-184b-4ca7-94b4-e3842b4886eb" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Giai dau</ID>
+  <Name>Giải đấu</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-853" scrolltop="-4481" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="5609" y="12612" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01a30000900180380100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="dim_competition" left="-262" top="-2805" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3863" height="3651" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000170f0000430e0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dim_competition" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-853</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-4481</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-262</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-2805</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout xmlns="" ZoomPercent="100" ViewPortX="0" ViewPortY="0">
+          <Shapes NodeWidth="215">
+            <Shape Id="Giai dau" Expanded="false">
+              <Attributes>
+                <Attribute Id="Giai dau" />
+                <Attribute Id="Competition Id" />
+                <Attribute Id="Competition Sub Type" />
+                <Attribute Id="Competition Type" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Competition Name" Expanded="false">
+              <Attributes>
+                <Attribute Id="Competition Name" />
+              </Attributes>
+              <Position x="293" y="20" />
+            </Shape>
+            <Shape Id="Country Name" Expanded="false">
+              <Attributes>
+                <Attribute Id="Country Name" />
+              </Attributes>
+              <Position x="567" y="20" />
+            </Shape>
+            <Shape Id="Confederation" Expanded="false">
+              <Attributes>
+                <Attribute Id="Confederation" />
+              </Attributes>
+              <Position x="841" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="dd73dcc7-dff9-4d48-818d-1baf397b1205">
+    <DataSourceViewID>Football DWH</DataSourceViewID>
+  </Source>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="c20cd0d9-70c9-464b-b63f-f48742336570">
+      <ID>Giai dau</ID>
+      <Name>Giải đấu</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="14203ca5-90aa-4b9d-b6bd-8fe33806774f">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="26f704c9-24c8-437b-be6d-7479973fe2a9">
+            <TableID>dbo_dim_competition</TableID>
+            <ColumnID>competition_key</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="7a6b6fa7-900b-426c-83ad-0be9acee4caa">
+        <DataType>WChar</DataType>
+        <DataSize>200</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="fa67f463-f967-41b0-a130-9db6eeb08eee">
+          <TableID>dbo_dim_competition</TableID>
+          <ColumnID>competition_name</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="c3b5f631-3db4-4426-8183-c7622db72b5f">
+          <AttributeID>Competition Id</AttributeID>
+          <Name>Competition Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="06035e81-6792-49ce-94cb-579b62495b64">
+          <AttributeID>Competition Type</AttributeID>
+          <Name>Competition Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="866ec8df-edec-496c-99ec-1f2d3ee476ba">
+          <AttributeID>Competition Name</AttributeID>
+          <Name>Competition Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3c351712-b6a0-4737-b433-32fa88be8489">
+          <AttributeID>Competition Sub Type</AttributeID>
+          <Name>Competition Sub Type</Name>
+        </AttributeRelationship>
+      <AttributeRelationship dwd:design-time-name="9aeed87a-45fc-4e75-a17d-3f10375f36d8"><AttributeID>Country Name</AttributeID><Name>Quốc gia</Name></AttributeRelationship></AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bf33877e-796d-4480-adb6-4f012263f7e7">
+      <ID>Competition Id</ID>
+      <Name>Mã giải</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="120d5de3-87f3-4bc0-9671-afa6977482c7">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e982f05e-8ebe-4c7d-881b-f3aa56319f35">
+            <TableID>dbo_dim_competition</TableID>
+            <ColumnID>competition_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a6c70fbd-f74e-41d5-b4f8-e6a5c3657dbc">
+      <ID>Competition Type</ID>
+      <Name>Loại giải</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="45adb0a1-20be-4bbe-9f40-a788089b4f46">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="327b995e-a2c9-41c8-a7a4-bd9c51d283a5">
+            <TableID>dbo_dim_competition</TableID>
+            <ColumnID>competition_type</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="359d5e3c-3e71-4ccc-a931-f56345a04c0c">
+      <ID>Country Name</ID>
+      <Name>Quốc gia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9d9023d8-3b08-4655-bf50-8799806a27ee">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6a48d6aa-3167-46b6-9c0a-65a19f9ad2ef">
+            <TableID>dbo_dim_competition</TableID>
+            <ColumnID>confederation</ColumnID>
+          </Source>
+        </KeyColumn>
+      <KeyColumn dwd:design-time-name="a0761870-efcc-4cc7-97d6-2ca934aeefb4">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e091a318-2a43-482d-8d97-8e0376a0aab7">
+            <TableID>dbo_dim_competition</TableID>
+            <ColumnID>country_name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="a9dfae85-8089-41e9-88cc-19575ffa0954">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f36ec2e1-b81a-4a6b-afed-8acc467e198a">
+            <TableID>dbo_dim_competition</TableID>
+            <ColumnID>country_name</ColumnID>
+          </Source>
+        </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="5e0a6acf-90f0-42d9-a528-efe39941b95e">
+          <AttributeID>Confederation</AttributeID>
+          <Name>Confederation</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="918fa874-6018-4996-99ce-d67bbeaaeb6e">
+      <ID>Confederation</ID>
+      <Name>Liên đoàn</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bc3a1c26-721a-4978-9ff2-e7ba80f46257">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c2b98bb9-e6b4-4ffd-a301-91e808957639">
+            <TableID>dbo_dim_competition</TableID>
+            <ColumnID>confederation</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d4693c91-8ffe-4bb7-975e-47cc8f6807e1">
+      <ID>Competition Name</ID>
+      <Name>Tên giải</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e99fef12-541b-482a-a9fd-4bd48c2cb7c2">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8f1ca1a8-dddc-4012-b500-2dd09fcf6af4">
+            <TableID>dbo_dim_competition</TableID>
+            <ColumnID>competition_name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2b7f8342-2168-4f32-bce7-b23e5c1bde20">
+      <ID>Competition Sub Type</ID>
+      <Name>Loại giải chi tiết</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f26253ee-9e16-4696-9551-ecb541326310">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="636aa0d4-776a-4394-a550-f5bb2daebf4a">
+            <TableID>dbo_dim_competition</TableID>
+            <ColumnID>competition_sub_type</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="2d8d6aea-a7dc-4836-9e9a-839920f9b205">
+      <ID>Hierarchy</ID>
+      <Name>Liên đoàn - Quốc gia - Giải đấu</Name>
+      <Levels>
+        <Level dwd:design-time-name="b973d266-bafc-4701-a22c-6f2dfb9dd7fb">
+          <ID>Confederation</ID>
+          <Name>Liên đoàn</Name>
+          <SourceAttributeID>Confederation</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="4c22bc93-0cec-4395-bc70-3f606d050b42">
+          <ID>Country Name</ID>
+          <Name>Quốc gia</Name>
+          <SourceAttributeID>Country Name</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="2f16304a-bfd8-4ac6-b7dd-57d871e7bf4c">
+          <ID>Competition Name</ID>
+          <Name>Giải đấu</Name>
+          <SourceAttributeID>Giai dau</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ProactiveCaching dwd:design-time-name="ad54ca82-f0cf-4604-b353-fef2903576b3">
+    <SilenceInterval>-PT1S</SilenceInterval>
+    <Latency>-PT1S</Latency>
+    <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+    <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+    <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="8b659e83-4ec3-4bcb-8622-e4d470dd7fde" />
+  </ProactiveCaching>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

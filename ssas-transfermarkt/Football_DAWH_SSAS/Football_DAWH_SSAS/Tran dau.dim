@@ -1,0 +1,324 @@
+<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="035cb8ad-acbb-49df-9b4e-a7a2ec58a974" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Tran dau</ID>
+  <Name>Trận đấu</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1161" scrolltop="-3951" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="5609" y="12612" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01a30000900180380100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="dim_match" left="-227" top="-3299" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3246" height="4710" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000ae0c000066120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dim_match" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1161</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-3951</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-227</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-3299</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout xmlns="" ZoomPercent="100" ViewPortX="0" ViewPortY="0">
+          <Shapes NodeWidth="176">
+            <Shape Id="Tran dau" Expanded="false">
+              <Attributes>
+                <Attribute Id="Tran dau" />
+                <Attribute Id="Attendance Band" />
+                <Attribute Id="Away Formation" />
+                <Attribute Id="Game Id" />
+                <Attribute Id="Home Formation" />
+                <Attribute Id="Referee" />
+                <Attribute Id="Stadium" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Round Type" Expanded="false">
+              <Attributes>
+                <Attribute Id="Round Type" />
+              </Attributes>
+              <Position x="245" y="20" />
+            </Shape>
+            <Shape Id="Round" Expanded="false">
+              <Attributes>
+                <Attribute Id="Round" />
+              </Attributes>
+              <Position x="470" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="fde63113-8192-4a39-8fee-e9d5a5ccd7e7">
+    <DataSourceViewID>Football DWH</DataSourceViewID>
+  </Source>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="8519e35c-c838-48a0-b88f-767d3223d841">
+      <ID>Tran dau</ID>
+      <Name>Trận đấu</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a17063b3-1950-460c-b49d-998283b2bc62">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d1e1dcda-d1aa-4c53-a970-e9db641f7b17">
+            <TableID>dbo_dim_match</TableID>
+            <ColumnID>match_key</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="55e68120-f94d-4613-a65b-b939e3097933">
+        <DataType>WChar</DataType>
+        <DataSize>20</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="5a59421f-f0bc-4020-8a9d-e4f1557b156d">
+          <TableID>dbo_dim_match</TableID>
+          <ColumnID>match_label</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="a0c23480-5273-499b-8828-df17ec5cf86a">
+          <AttributeID>Game Id</AttributeID>
+          <Name>Game Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="db216c25-dd08-4793-a3ef-a59ae7c65a68">
+          <AttributeID>Referee</AttributeID>
+          <Name>Referee</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a16a48d0-0431-4e9b-8cab-fd5143c0145b">
+          <AttributeID>Stadium</AttributeID>
+          <Name>Stadium</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3cd7d747-7979-45d0-a572-766d3e0a6e01">
+          <AttributeID>Home Formation</AttributeID>
+          <Name>Home Formation</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5f31323e-dac8-4176-8613-bb3ae8d79a74">
+          <AttributeID>Away Formation</AttributeID>
+          <Name>Away Formation</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6e4dd63e-c108-45ef-a1c5-e9451ebf0ff9">
+          <AttributeID>Attendance Band</AttributeID>
+          <Name>Attendance Band</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="03fb0879-1b83-4414-94c1-3e4ea01f16be">
+          <AttributeID>Round Type</AttributeID>
+          <Name>Round Type</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8266ec21-edec-41f1-afbe-aa6bc4f0a9b9">
+      <ID>Game Id</ID>
+      <Name>Mã trận</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a8434c45-faf7-4e5e-a1d8-5a2a60b9b7b2">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0ed2fa97-b9e1-43a7-8953-0a5f8cd85647">
+            <TableID>dbo_dim_match</TableID>
+            <ColumnID>game_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f75c0920-08d6-46ee-92d2-7d1e2e734e4e">
+      <ID>Round</ID>
+      <Name>Vòng đấu</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ae410355-2c90-4359-a50a-e475890ebb78">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fd9f39a7-a151-4a05-a12c-4e1ce39746ae">
+            <TableID>dbo_dim_match</TableID>
+            <ColumnID>round</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="19ffa977-9946-410f-a64a-30547b23356c">
+      <ID>Round Type</ID>
+      <Name>Loại vòng</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2fa21f70-262e-4005-b99b-b7fe3d492dce">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bd9c48cf-51f8-4e69-b31c-9119ac04948f">
+            <TableID>dbo_dim_match</TableID>
+            <ColumnID>round_type</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="523fbca3-8190-4086-a08b-969da26e7138">
+          <AttributeID>Round</AttributeID>
+          <Name>Round</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="09171399-f079-46ed-8a97-966a4766c52f">
+      <ID>Referee</ID>
+      <Name>Trọng tài</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b6d4096c-39ef-44c7-8395-7c236ebba8c3">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fa232322-80ca-464f-af09-97505857ab04">
+            <TableID>dbo_dim_match</TableID>
+            <ColumnID>referee</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ce9855dc-0c5d-4002-a9b4-68fb1cb1d1ef">
+      <ID>Stadium</ID>
+      <Name>Sân vận động</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b466f082-82e1-4193-b7bd-44829b317d6a">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="17172841-33f7-421c-84f8-62738c1d01b0">
+            <TableID>dbo_dim_match</TableID>
+            <ColumnID>stadium</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="63b67970-c6b9-473c-8b88-cd159a3b8e7b">
+      <ID>Home Formation</ID>
+      <Name>Sơ đồ đội nhà</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1bb38fe5-51bc-475a-8e60-926276be1e41">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8b701d20-d1f7-4e24-8bfa-a56953eb9263">
+            <TableID>dbo_dim_match</TableID>
+            <ColumnID>home_formation</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2abbaf96-574b-46ca-bd6f-fa15b89f2107">
+      <ID>Away Formation</ID>
+      <Name>Sơ đồ đội khách</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c8130cb7-0f21-4133-9ccd-ffe080b9e045">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7b0f2554-87c0-4e10-9a4c-c31f3330b8cd">
+            <TableID>dbo_dim_match</TableID>
+            <ColumnID>away_formation</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="de301e1b-06e9-40bd-b279-238262332f05">
+      <ID>Attendance Band</ID>
+      <Name>Nhóm khán giả</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0847dcc3-de57-412f-ad3e-908809af1ad0">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="12d365fb-1f4e-4190-8c62-7453f4be13d2">
+            <TableID>dbo_dim_match</TableID>
+            <ColumnID>attendance_band</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="43c7acaf-4a1e-402f-b946-2bb14ae3813e">
+      <ID>Hierarchy</ID>
+      <Name>Loại vòng - Vòng đấu</Name>
+      <Levels>
+        <Level dwd:design-time-name="cd8967cb-76b9-484b-85e7-7de059d8da9f">
+          <ID>Round Type</ID>
+          <Name>Loại vòng</Name>
+          <SourceAttributeID>Round Type</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="d5c53b6e-3829-4419-a76b-d5a2f1f801ce">
+          <ID>Round</ID>
+          <Name>Vòng đấu</Name>
+          <SourceAttributeID>Round</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ProactiveCaching dwd:design-time-name="ba095972-9a9e-4e4e-9456-bedec740a7c1">
+    <SilenceInterval>-PT1S</SilenceInterval>
+    <Latency>-PT1S</Latency>
+    <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+    <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+    <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="1686bd6c-9cff-4438-b4c0-3f83be31f006" />
+  </ProactiveCaching>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

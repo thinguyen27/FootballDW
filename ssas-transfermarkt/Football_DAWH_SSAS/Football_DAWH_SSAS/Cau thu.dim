@@ -1,0 +1,361 @@
+<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="d05d9610-7aaf-4dec-80d4-2e22122c50fc" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Cau thu</ID>
+  <Name>Cầu thủ</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-685" scrolltop="-4358" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="5609" y="12612" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01a30000900180380100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="dim_player" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4163" height="7381" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e000043100000d51c0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dim_player" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-685</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-4358</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="9d13202a-6736-4036-958c-378b8e40e380">
+    <DataSourceViewID>Football DWH</DataSourceViewID>
+  </Source>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="57e2e59a-8b68-418d-bcaf-1515b84250c9">
+      <ID>Cau thu</ID>
+      <Name>Cầu thủ</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f2a978aa-6ad2-4f8e-98c6-fa2eab3214a8">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="067ad550-5bc0-4b04-a7a6-89a13b443927">
+            <TableID>dbo_dim_player</TableID>
+            <ColumnID>player_key</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="f7ac1296-04e5-45b1-b0ad-a4d3851e3c66">
+        <DataType>WChar</DataType>
+        <DataSize>200</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="46263032-0778-4323-a638-47a463d32fec">
+          <TableID>dbo_dim_player</TableID>
+          <ColumnID>full_name</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="63913a07-485d-453d-b0a7-31e930ba8825">
+          <AttributeID>Vi tri chi tiet</AttributeID>
+          <Name>Vị trí chi tiết</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="74aefca7-f0fa-4e34-8a55-7d898a4c7d1e">
+          <AttributeID>Chan thuan</AttributeID>
+          <Name>Chân thuận</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8d6edfd6-945e-44d3-ae54-b6fca2f1e653">
+          <AttributeID>Chieu cao</AttributeID>
+          <Name>Chiều cao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="042fff31-9a72-4154-841a-e15501311a7f">
+          <AttributeID>Quoc tich</AttributeID>
+          <Name>Quốc tịch</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2023b3ab-6cc6-44b1-905b-f4a55d87ce99">
+          <AttributeID>Noi sinh</AttributeID>
+          <Name>Nơi sinh</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0c03f79b-3632-46a5-be79-bc3df87878e1">
+          <AttributeID>So lan khoac ao DT</AttributeID>
+          <Name>Số lần khoác áo ĐT</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0d4da15a-cafc-43c9-9766-c47573fb8e3f">
+          <AttributeID>Nguoi dai dien</AttributeID>
+          <Name>Người đại diện</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ff86ea39-c4d9-40b1-b536-a54cf47c318d">
+          <AttributeID>Nam het hop dong</AttributeID>
+          <Name>Năm hết hợp đồng</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="64ab9679-1654-480a-8a6a-f110ca471e88">
+          <AttributeID>Phien ban hien tai</AttributeID>
+          <Name>Phiên bản hiện tại</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+      <OrderBy>Name</OrderBy>
+    </Attribute>
+    <Attribute dwd:design-time-name="13e80962-6cba-477a-9a62-34decf407254">
+      <ID>Vi tri chi tiet</ID>
+      <Name>Vị trí chi tiết</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f8af6015-d295-48e4-a8cc-89872913a2fc">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3d3b8624-1cb8-4d62-b5f6-4d64ee39caab">
+            <TableID>dbo_dim_player</TableID>
+            <ColumnID>position</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="36589846-c90b-4dc6-8830-aab02606e38d">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c73372c6-992b-4a92-a0b6-ba3bc045dbe1">
+            <TableID>dbo_dim_player</TableID>
+            <ColumnID>sub_position</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="d14a244f-cedf-47d4-8f4e-dfd8a2b9eaa1">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="6ee2fc05-4f0b-46a8-8e62-a5d614521e86">
+          <TableID>dbo_dim_player</TableID>
+          <ColumnID>sub_position</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="2089413f-914e-4d13-8912-b4e4a50f117f">
+          <AttributeID>Vi tri</AttributeID>
+          <Name>Vị trí</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+      <OrderBy>Name</OrderBy>
+    </Attribute>
+    <Attribute dwd:design-time-name="f7cc2aff-90cf-45cc-a8cd-4c9ff7c942da">
+      <ID>Vi tri</ID>
+      <Name>Vị trí</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="51bfb4c1-e097-4a19-a5b0-d14e70dbdb10">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f6c03f65-2da8-40e5-af17-ce925143d4b6">
+            <TableID>dbo_dim_player</TableID>
+            <ColumnID>position</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4997a4db-e9ba-44b5-a474-4de58bcf174f">
+      <ID>Chan thuan</ID>
+      <Name>Chân thuận</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1619bf16-e561-455e-a390-598fde1653c2">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9421c226-1414-424a-9a8d-bff875a636f5">
+            <TableID>dbo_dim_player</TableID>
+            <ColumnID>foot</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4efe57e3-4110-484b-b6d4-164e2dcacf44">
+      <ID>Chieu cao</ID>
+      <Name>Chiều cao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6da3d38e-7a35-4955-8ed6-5b45b4dbfb08">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c700f975-6d5a-464f-89fc-1301c2b6b119">
+            <TableID>dbo_dim_player</TableID>
+            <ColumnID>height_band</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f040232b-be93-4932-ad28-b4eb3f7b818a">
+      <ID>Quoc tich</ID>
+      <Name>Quốc tịch</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0adb9397-0918-471c-98f6-ef86d8b35fab">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="927115aa-9806-49cb-a449-479f8be2419f">
+            <TableID>dbo_dim_player</TableID>
+            <ColumnID>citizenship</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8e31cc70-f021-4c39-87aa-0cea975bf7be">
+      <ID>Noi sinh</ID>
+      <Name>Nơi sinh</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c3e0460f-0659-4c21-80db-dbef7135f812">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f4203ef1-493e-4d8c-88c2-0c9d3f1e6770">
+            <TableID>dbo_dim_player</TableID>
+            <ColumnID>country_of_birth</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bd478729-c90f-4843-8131-9ad323558caa">
+      <ID>So lan khoac ao DT</ID>
+      <Name>Số lần khoác áo ĐT</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0b22d751-5e87-44f3-a96b-78fb1bac08e1">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bea0a037-1662-4df6-9ec3-e0ec1c93b6fd">
+            <TableID>dbo_dim_player</TableID>
+            <ColumnID>international_caps_band</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="47047d88-9ead-4863-b255-b19a91e82e6d">
+      <ID>Nguoi dai dien</ID>
+      <Name>Người đại diện</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="69953e58-e1e5-47b2-a301-26b04485632c">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e5d472d5-057b-48d9-a7da-b8909c485269">
+            <TableID>dbo_dim_player</TableID>
+            <ColumnID>agent_name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="854d816e-ef83-4f5c-8b2f-545229dffe82">
+      <ID>Nam het hop dong</ID>
+      <Name>Năm hết hợp đồng</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="58072035-606c-40a3-b6bb-602d9a3fdf82">
+          <DataType>SmallInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="376ae65f-9c7c-4802-a324-7ba0ca5f5d96">
+            <TableID>dbo_dim_player</TableID>
+            <ColumnID>contract_expiry_year</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2ebfcfcf-c7e7-4d9a-85ee-e6468305c53b">
+      <ID>Phien ban hien tai</ID>
+      <Name>Phiên bản hiện tại</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b3cbf0f3-1c62-4c83-aa2b-964c2e0c244e">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b4d36cd6-93bc-4ba6-93d0-4f0bdc92b0c6">
+            <TableID>dbo_dim_player</TableID>
+            <ColumnID>is_current</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="82879b64-b7ab-4163-b99e-b5a3e9dce7f5">
+      <ID>Vi tri - Cau thu</ID>
+      <Name>Vị trí - Vị trí chi tiết - Cầu thủ</Name>
+      <Levels>
+        <Level dwd:design-time-name="bd433f4d-0f14-4718-bdc0-99700afaf9b1">
+          <ID>Vi tri</ID>
+          <Name>Vị trí</Name>
+          <SourceAttributeID>Vi tri</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="f6aad983-8da8-4b03-b018-c4431431fd8f">
+          <ID>Vi tri chi tiet</ID>
+          <Name>Vị trí chi tiết</Name>
+          <SourceAttributeID>Vi tri chi tiet</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="00763cb0-7437-48d6-aa3d-da5429574ee0">
+          <ID>Cau thu</ID>
+          <Name>Cầu thủ</Name>
+          <SourceAttributeID>Cau thu</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ProactiveCaching dwd:design-time-name="27df46a9-9a23-49b3-be0f-11aab09bf018">
+    <SilenceInterval>-PT1S</SilenceInterval>
+    <Latency>-PT1S</Latency>
+    <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+    <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+    <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="bee5f409-c4fc-4254-8703-2b16e4c5d064" />
+  </ProactiveCaching>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

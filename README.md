@@ -1,130 +1,212 @@
-# FootballDW – Kho dữ liệu bóng đá Transfermarkt
+# DAWH Football Transfermarkt
 
-Đồ án môn Thiết kế kho dữ liệu. Kho được thiết kế theo phương pháp Kimball, dạng Fact Constellation với 2 tầng grain:
-- 4 fact chi tiết: trận đấu theo đội, lần ra sân, lần định giá, thương vụ chuyển nhượng.
-- 2 fact tổng hợp theo mùa.
+## 1. Giới thiệu
 
-Công nghệ sử dụng:
-- SQL Server 2022: database nguồn TransfermarktDB và kho FootballDW.
-- SSIS: toàn bộ luồng ETL.
-- SSAS Multidimensional: cube và truy vấn MDX.
+Đây là đồ án môn **Data Warehouse**, xây dựng kho dữ liệu phân tích bóng đá dựa trên dữ liệu từ **Transfermarkt**.
 
-Tài liệu thiết kế chính thức: [`docs/Thiet_ke_v1.md`](docs/Thiet_ke_v1.md) (bản Word: `docs/Thiet_ke_v1.docx`).
+Đề tài áp dụng phương pháp **Kimball Dimensional Modeling** để thiết kế Data Warehouse theo mô hình **Fact Constellation (Galaxy Schema)**.
 
-## Thành viên và phân công
+Mục tiêu của hệ thống là tích hợp dữ liệu bóng đá từ nhiều bảng dữ liệu nguồn và tổ chức lại thành các bảng Fact và Dimension, phục vụ cho việc phân tích đội bóng, cầu thủ, giá trị cầu thủ và hoạt động chuyển nhượng.
 
-| Người | Vai trò chính | Review chéo với |
-|---|---|---|
-| A | Kiến trúc, staging từ DB, Dim_Club, Dim_Player, master package, CDC | D |
-| B | Fact_Team_Match, Fact_Club_Season_Summary, Dim_Date, Dim_Season, Dim_Manager | C |
-| C | Fact_Player_Appearance, Fact_Player_Valuation, Fact_Player_Season_Summary, Dim_Competition | B |
-| D | Transfers từ CSV, Fact_Transfer, demo incremental, cube SSAS | A |
+## 2. Nguồn dữ liệu
 
-Chi tiết ticket và tiến độ: `docs/Phan_cong_Ticket_DWH.xlsx`.
+### Nguồn dữ liệu gốc
 
-## Cấu trúc thư mục
+**Transfermarkt**
+
+Website:
+
+https://www.transfermarkt.com/
+
+Transfermarkt là nguồn dữ liệu bóng đá được sử dụng để cung cấp thông tin về cầu thủ, câu lạc bộ, trận đấu, giá trị thị trường và chuyển nhượng.
+
+### Dataset sử dụng trong đồ án
+
+Đồ án sử dụng bộ dữ liệu:
+
+**Transfermarkt Datasets**
+
+Repository:
+
+https://github.com/dcaribou/transfermarkt-datasets
+
+Dataset được xây dựng từ dữ liệu Transfermarkt và cung cấp các bảng dữ liệu có thể liên kết với nhau thông qua các ID. Bộ dữ liệu bao gồm các thông tin về competitions, games, clubs, players, appearances, player valuations, club games, transfers và các bảng liên quan.
+
+Tại thời điểm hiện tại, repository công bố dữ liệu với quy mô khoảng:
+
+* 88,000+ trận đấu
+* 50,000+ cầu thủ
+* 1,890,000+ lượt cầu thủ xuất hiện trong trận đấu
+* 650,000+ bản ghi lịch sử giá trị cầu thủ
+* 175,000+ bản ghi chuyển nhượng
+* 177,000+ bản ghi `club_games`
+* 790+ câu lạc bộ
+* 65 competitions
+
+Các số liệu trên là quy mô được công bố trong dataset và có thể thay đổi tùy phiên bản dữ liệu được sử dụng. Repository hiện ghi nhận dữ liệu được cập nhật đến **06/07/2026** và quá trình cập nhật tự động đang tạm dừng.
+
+## 3. Các bảng dữ liệu nguồn
+
+Một số bảng dữ liệu chính được sử dụng:
+
+| Bảng                | Nội dung                                    |
+| ------------------- | ------------------------------------------- |
+| `players`           | Thông tin cầu thủ                           |
+| `clubs`             | Thông tin câu lạc bộ                        |
+| `competitions`      | Giải đấu và các cuộc thi                    |
+| `games`             | Thông tin trận đấu                          |
+| `club_games`        | Thông tin trận đấu theo góc nhìn câu lạc bộ |
+| `appearances`       | Thống kê cầu thủ trong từng trận            |
+| `player_valuations` | Lịch sử giá trị thị trường của cầu thủ      |
+| `transfers`         | Thông tin chuyển nhượng cầu thủ             |
+| `countries`         | Thông tin quốc gia                          |
+| `national_teams`    | Thông tin đội tuyển quốc gia                |
+
+Dataset nguồn mô tả `appearances` là dữ liệu theo từng cầu thủ trong từng trận đấu, `player_valuations` lưu các bản ghi thay đổi giá trị cầu thủ và `transfers` lưu thông tin cầu thủ, câu lạc bộ đi, câu lạc bộ đến và phí chuyển nhượng.
+
+## 4. Mục tiêu của Data Warehouse
+
+Data Warehouse được xây dựng nhằm:
+
+* Tích hợp dữ liệu bóng đá từ nhiều bảng dữ liệu nguồn.
+* Chuẩn hóa dữ liệu phục vụ phân tích.
+* Thiết kế mô hình dữ liệu theo phương pháp Kimball.
+* Xây dựng các Dimension và Fact.
+* Xử lý dữ liệu thay đổi theo thời gian bằng SCD.
+* Hỗ trợ phân tích theo cầu thủ, câu lạc bộ, giải đấu, mùa giải và thời gian.
+* Cung cấp fact chi tiết để tầng phân tích (SSAS) tổng hợp phục vụ báo cáo và trực quan hóa.
+
+## 5. Phạm vi phân tích
+
+Đồ án tập trung vào 4 quy trình nghiệp vụ chính:
+
+### 5.1. Hiệu suất đội bóng trong trận đấu
+
+Phân tích:
+
+* Số bàn thắng ghi được.
+* Số bàn thua.
+* Kết quả thắng, hòa, thua.
+* Clean sheet.
+* Điểm (3 thắng / 1 hòa / 0 thua) và hiệu số bàn thắng.
+* Vị trí của đội bóng.
+
+### 5.2. Hiệu suất cầu thủ trong trận đấu
+
+Phân tích:
+
+* Số phút thi đấu.
+* Bàn thắng.
+* Kiến tạo.
+* Thẻ vàng.
+* Thẻ đỏ.
+* Số lần ra sân.
+
+### 5.3. Giá trị cầu thủ
+
+Phân tích:
+
+* Giá trị thị trường của cầu thủ.
+* Biến động giá trị theo thời gian.
+* Giá trị cầu thủ theo câu lạc bộ.
+* Giá trị cầu thủ theo mùa giải.
+
+### 5.4. Chuyển nhượng
+
+Phân tích:
+
+* Lịch sử chuyển nhượng.
+* Câu lạc bộ đi và câu lạc bộ đến.
+* Phí chuyển nhượng.
+* Giá trị thị trường tại thời điểm chuyển nhượng.
+* Chênh lệch giữa phí chuyển nhượng và giá trị thị trường.
+* Tuổi cầu thủ lúc chuyển nhượng, tách thị trường đội trẻ (dưới 18 tuổi) và chuyên nghiệp.
+
+## 6. Mô hình Data Warehouse
+
+Kho dữ liệu được thiết kế theo **Fact Constellation / Galaxy Schema**, trong đó nhiều Fact sử dụng các Dimension dùng chung.
+
+### Fact
+
+* `Fact_Team_Match`
+* `Fact_Player_Appearance`
+* `Fact_Player_Valuation`
+* `Fact_Transfer`
+
+### Dimension
+
+* `Dim_Date`
+* `Dim_Club`
+* `Dim_Player`
+* `Dim_Season`
+* `Dim_Competition`
+* `Dim_Match`
+* `Dim_Manager`
+* `Dim_Transfer_Type`
+
+Fact lưu ở grain chi tiết nhất (mỗi trận theo đội, mỗi lượt ra sân, mỗi lần định giá, mỗi thương vụ) và chỉ thêm dòng mới. Kho không có bảng tổng hợp; các phép tổng hợp như bảng xếp hạng mùa, bàn thắng mỗi 90 phút, chi tiêu ròng của CLB do SSAS tính trên fact chi tiết.
+
+Bảng điều khiển ETL:
+
+* `etl_load_window`: cửa sổ thời gian của lần nạp gần nhất.
+* `etl_batch`: nhật ký mỗi lần chạy (mã lần chạy, cửa sổ nạp, thời gian, trạng thái, số dòng fact trước và sau).
+
+## 7. Thiết kế ETL
+
+ETL được xây dựng bằng **SSIS** (package `Main_ETL_Master.dtsx`), gồm 3 Sequence Container chạy nối tiếp:
 
 ```
-FootballDW/
-├── README.md
-├── docs/                  Tài liệu thiết kế, hướng dẫn triển khai, file ticket
-│   └── bien_ban_hop/      Biên bản họp nhóm (đặt tên YYYY-MM-DD_noi-dung.md)
-├── data/                  transfers_dot1.csv, transfers_dot2.csv (demo 2 đợt)
-├── sql/                   Script SQL, chạy theo thứ tự số
-├── ssis/                  Solution SSIS FootballDW_ETL
-├── ssas/                  Project SSAS FootballDW_Cube
-├── queries/
-│   ├── sql/               Truy vấn phân tích SQL (DW-33, DW-36, DW-37)
-│   └── mdx/               Truy vấn MDX (DW-34, DW-35)
-└── report/                Báo cáo cuối kỳ và hình minh họa
+10 file CSV ──01──► Staging (stg_raw_*) ──02──► 8 Dimension ──03──► 4 Fact chi tiết ──► SSAS
+              Extract                   Transform + Load      Transform + Load        (tổng hợp)
 ```
 
-10 file CSV gốc của Transfermarkt **không** nằm trong repo. appearances.csv nặng khoảng 190 MB, vượt giới hạn 100 MB của GitHub. Mỗi người tự đặt các file này tại `C:\TransfermarktData\`.
+| Container | Việc làm |
+| --- | --- |
+| `01 - Trích xuất file CSV vào Staging` | Xóa dữ liệu cũ trong Staging, chép nguyên trạng 10 file CSV vào 10 bảng `stg_raw_*` |
+| `02 - Làm sạch và nạp Dimension` | Làm sạch, chuẩn hóa, loại trùng và nạp 6 dimension theo SCD1 / SCD2 / SCD3 |
+| `03 - Làm sạch tính toán và nạp Fact` | Làm sạch, kiểm tra quy tắc, tính measure mức từng dòng, tra surrogate key, nạp gia tăng 4 fact; ghi nhật ký lần chạy |
 
-## Cài đặt trên một máy mới
+Nguyên tắc:
 
-1. Cài theo DW-03 trong `docs/Huong_dan_trien_khai_DW01-DW32.docx`:
-   - SQL Server 2022 Developer, có kèm Analysis Services.
-   - SSMS.
-   - Visual Studio 2022 và 2 extension: SSIS Projects, Analysis Services Projects.
-2. Chép 10 file CSV gốc và 2 file trong `data/` vào `C:\TransfermarktData\`.
-3. Mở từng script trong SSMS và chạy theo thứ tự:
+1. **Tính toán mức từng dòng nằm trong ETL**, trước khi ghi kho: cờ thắng/hòa/thua, `points`, `goal_difference`, `is_clean_sheet`, `value_change_eur`, tuổi, `is_youth_transfer`, loại phí, phí chênh, các band của dimension.
+2. **Kho chỉ lưu**: fact chỉ thêm dòng mới (append-only), không chạy SQL tính toán hay sửa fact sau khi nạp.
+3. **Tổng hợp ở tầng phân tích** (SSAS).
+4. **Nạp gia tăng** theo cửa sổ `LoadFrom`–`LoadTo`; dòng đã có trong fact được bỏ qua nên chạy lại không bị trùng.
+5. Dòng lỗi ép kiểu hoặc vi phạm quy tắc được ghi vào `etl_reject`; khóa không tra được gán dòng Unknown (-1).
 
-| Thứ tự | File | Chạy trên | Ghi chú |
-|---|---|---|---|
-| 1 | `sql/00_Load_Transfermarkt_CSV.sql` | master | Tạo TransfermarktDB, nạp 10 bảng |
-| 2 | `sql/00a_Tach_du_lieu_dot_1.sql` | TransfermarktDB | Chỉ chạy 1 lần; cắt nguồn về đợt 1 |
-| 3 | `sql/01_FootballDW_DDL.sql` | master | **Xóa và tạo lại** FootballDW |
-| 4 | `sql/02` → `sql/06` | FootballDW | Tạo thủ tục; chạy lại toàn bộ mỗi khi chạy lại 01 |
-| 5 | `ssis/FootballDW_ETL.sln` → chạy `pkg_Master.dtsx` | | Nạp đợt 1 |
-| 6 | `sql/07_Kiem_tra_ket_qua.sql` | FootballDW | So với con số kỳ vọng trong file |
-| 7 | `sql/00b_Ap_dung_dot_2.sql`, rồi chạy lại `pkg_Master` | TransfermarktDB | Demo incremental đợt 2 |
+Cách chạy và kiểm tra: xem [`docs/Huong_dan_chay_ETL_SSIS.md`](docs/Huong_dan_chay_ETL_SSIS.md). Diễn giải từng component: [`docs/Dien_giai_chi_tiet_SSIS.md`](docs/Dien_giai_chi_tiet_SSIS.md). Danh mục phép tính và measure: [`docs/Tinh_toan_trong_ETL_va_Measure.md`](docs/Tinh_toan_trong_ETL_va_Measure.md).
 
-Khi chưa có SSIS, có thể chạy thử toàn bộ bằng SQL (xem cuối file `sql/06`):
+| Script | Việc làm |
+| --- | --- |
+| `sql/00_create_staging_raw.sql` | Tạo database Staging, 10 bảng `stg_raw_*` và `etl_reject` |
+| `sql/01_create_dw.sql` | Tạo kho dữ liệu: 8 dimension, 4 fact, bảng điều khiển ETL, dim tĩnh, dòng Unknown, procedure SCD2 |
+| `sql/99_kiem_tra_ket_qua.sql` | Kiểm tra kết quả sau mỗi lần chạy |
 
-```sql
-EXEC etl.usp_Run_All_SQL @effective_date = NULL,
-     @transfers_csv = N'C:\TransfermarktData\transfers_dot1.csv';
-```
+## 8. Công nghệ sử dụng
 
-## Quy ước đặt tên
+* Data Warehouse: Kimball Dimensional Modeling (Galaxy Schema)
+* Database: SQL Server 2022
+* ETL: SQL Server Integration Services (SSIS), Visual Studio 2022
+* Data Source: Transfermarkt
+* Dataset: Transfermarkt Datasets
+* Phân tích OLAP: SSAS (Multidimensional), truy vấn MDX
 
-### Database
+## 9. Tài liệu tham khảo và nguồn dữ liệu
 
-| Đối tượng | Quy ước | Ví dụ |
-|---|---|---|
-| Database nguồn | TransfermarktDB, giữ nguyên tên bảng gốc | `dbo.club_games` |
-| Kho dữ liệu | FootballDW | |
-| Schema | `etl` = điều khiển ETL, `stg` = staging, `dw` = kho | |
-| Bảng staging | Schema `stg`, giữ tên bảng nguồn | `stg.games`, `stg.transfers` |
-| Bảng tính toán trung gian | `stg.calc_<fact>` | `stg.calc_team_match` |
-| Dimension | `dw.dim_<tên>`, chữ thường, gạch dưới | `dw.dim_club` |
-| Fact | `dw.fact_<tên>` | `dw.fact_player_appearance` |
-| Surrogate key | `<tên dim>_key`, kiểu INT; dòng Unknown = -1 | `club_key`, `player_key` |
-| Khóa gốc từ nguồn | Giữ tên nguồn | `club_id`, `player_id` |
-| Cột cờ 0/1 | Tiền tố `is_` | `is_win`, `is_current` |
-| Cột SCD Type 2 | `effective_date`, `expiry_date`, `is_current`, `scd2_hash` | |
-| Stored procedure | `etl.usp_<Động từ>_<Đối tượng>`, viết PascalCase | `etl.usp_Load_DimClub`, `etl.usp_Calc_TeamMatch` |
-| Hàm | `etl.fn_<Tên>` | `etl.fn_RoundType` |
-| Chỉ mục | `IX_<bảng>_<cột>` | `IX_ftm_club_season` |
+1. Transfermarkt
+   https://www.transfermarkt.com/
 
-> Ticket ghi "stg_ cho staging". Nhóm dùng **schema** `stg` thay cho tiền tố tên bảng: gọn hơn, phân quyền theo schema được, và tên bảng staging trùng tên nguồn nên dễ đối chiếu.
+2. Transfermarkt Datasets - GitHub
+   https://github.com/dcaribou/transfermarkt-datasets
 
-### SSIS
+3. Transfermarkt Datasets - Dataset Metadata
+   https://github.com/dcaribou/transfermarkt-datasets/blob/master/data/prep/dataset-metadata.json
 
-| Đối tượng | Quy ước | Ví dụ |
-|---|---|---|
-| Package | `pkg_<Tầng>_<Đối tượng>` | `pkg_Stg_FromDB`, `pkg_Fact_TeamMatch`, `pkg_Master` |
-| Connection Manager | `CM_<tên>` | `CM_Source`, `CM_DW`, `CM_TransfersCSV` |
-| Execute SQL Task | `EST_<việc>` | `EST_CalcTeamMatch` |
-| Data Flow Task | `DFT_<việc>` | `DFT_LoadFactTeamMatch` |
-| Sequence Container | `SEQ_<nhóm>` | `SEQ_Dimensions` |
-| Execute Package Task | `EPT_<package>` | `EPT_Fact_Transfer` |
-| Thành phần trong Data Flow | `SRC_`, `LKP_`, `DER_`, `CNV_`, `RC_`, `DST_` | `LKP_Competition`, `DST_FactTeamMatch` |
-| Tham số | Project: PascalCase; package: `BatchId` | `TransfersCsvPath` |
+4. Kimball Group - Dimensional Modeling
+   https://www.kimballgroup.com/
 
-### SSAS và truy vấn
+## 10. Lưu ý về dữ liệu
 
-| Đối tượng | Quy ước | Ví dụ |
-|---|---|---|
-| Dimension trong cube | Tên tiếng Anh, có dấu cách | `Club`, `Opponent Club`, `Transfer Type` |
-| Hierarchy | Danh từ mô tả | `Calendar`, `Geography`, `Positions` |
-| File truy vấn | `<ticket>_<số thứ tự>_<nội dung>.sql` hoặc `.mdx` | `DW-33_01_bang_xep_hang.sql` |
+Dữ liệu được sử dụng cho mục đích học tập và xây dựng đồ án Data Warehouse.
 
-## Quy trình làm việc với Git
-
-1. **Mỗi ticket một nhánh**, đặt tên `DW-xx-mo-ta-ngan` (ví dụ `DW-10-stg-from-db`).
-2. **Commit** bắt đầu bằng mã ticket: `DW-10: thêm data flow club_games`.
-3. **Pull request** vào `main`. Người review chéo (theo bảng phân công) duyệt rồi mới merge. PR là minh chứng làm việc nhóm cho tiêu chí 2.
-4. **Trước khi bắt đầu làm:** Pull (Fetch origin) để lấy bản mới nhất.
-5. **Mỗi package `.dtsx` chỉ một người sửa**, đúng chủ ticket. File `.dtsx` là XML rất khó gộp; hai người cùng sửa gần như chắc chắn hỏng file. Muốn góp ý thì comment trong PR.
-6. **File `FootballDW_ETL.dtproj` và `Project.params`** do A quản lý. Ai thêm package mới thì báo A.
-
-## Lưu ý kỹ thuật khi làm SSIS trong nhóm
-
-- **ProtectionLevel = DontSaveSensitive** cho project và mọi package:
-  - Chuột phải project → Properties → Protection Level.
-  - Mặc định EncryptSensitiveWithUserKey làm package báo lỗi mật khẩu trên máy người khác.
-- Connection Manager dùng Server name = `localhost` (hoặc `.`) và Windows Authentication, để chạy được trên mọi máy mà không cần sửa.
-- Đường dẫn file đi qua project parameter `TransfersCsvPath`, không ghi cứng trong package.
-- **Không commit** thư mục `bin/`, `obj/`, `.vs/` (đã có trong `.gitignore`).
+Dữ liệu gốc có nguồn từ Transfermarkt và được cung cấp thông qua bộ Transfermarkt Datasets. Repository của dataset mô tả rõ nguồn dữ liệu, cấu trúc các bảng và quy trình thu thập/xử lý dữ liệu.

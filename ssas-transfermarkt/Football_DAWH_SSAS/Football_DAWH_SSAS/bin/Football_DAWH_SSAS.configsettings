@@ -1,0 +1,178 @@
+﻿<ConfigurationSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Database>
+    <DataSources>
+      <DataSource>
+        <ID>Football DWH</ID>
+        <ConnectionString>Provider=MSOLEDBSQL.1;Data Source=localhost\SSAS;Integrated Security=SSPI;Initial Catalog=football_dwh_dw</ConnectionString>
+        <ImpersonationInfo>
+          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateServiceAccount</ImpersonationMode>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+        </ImpersonationInfo>
+      </DataSource>
+    </DataSources>
+    <Dimensions>
+      <Dimension>
+        <ID>Ngay</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Mua giai</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Giai dau</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Tran dau</ID>
+      </Dimension>
+      <Dimension>
+        <ID>HLV</ID>
+      </Dimension>
+      <Dimension>
+        <ID>CLB</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Cau thu</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Loai chuyen nhuong</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Tuoi</ID>
+      </Dimension>
+    </Dimensions>
+    <Cubes>
+      <Cube>
+        <ID>Football DWH</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Fact Team Match</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Team Match</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Fact Player Appearance</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Player Appearance</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Fact Player Appearance Distinct</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Player Appearance Distinct</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Fact Player Valuation</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Player Valuation</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Fact Transfer</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Transfer</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>Thi truong cau thu</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Fact Player Valuation</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Player Valuation</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Fact Transfer</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Transfer</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>Hieu suat doi bong</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Fact Team Match</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Team Match</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>Hieu suat cau thu</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Fact Player Appearance</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Player Appearance</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Fact Player Appearance Distinct</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Player Appearance Distinct</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>Ky luat va Trong tai</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Fact Player Appearance Discipline</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Player Appearance Discipline</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Fact Player Appearance Matches</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Player Appearance Matches</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Fact Player Appearance Players</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Player Appearance Players</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+    </Cubes>
+    <DataSourceImpersonationInfo>
+      <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
+      <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+    </DataSourceImpersonationInfo>
+  </Database>
+</ConfigurationSettings>

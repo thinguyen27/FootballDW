@@ -1,0 +1,350 @@
+<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="6c198bad-1393-4771-9e3e-01ee726107bc" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>CLB</ID>
+  <Name>CLB</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-738" scrolltop="-3806" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="5609" y="12612" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01a30000900180380100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="dim_club" left="-280" top="-2822" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4427" height="8123" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00004b110000bb1f0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dim_club" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-738</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-3806</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-280</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-2822</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout xmlns="" ZoomPercent="100" ViewPortX="0" ViewPortY="0">
+          <Shapes NodeWidth="219">
+            <Shape Id="CLB" Expanded="false">
+              <Attributes>
+                <Attribute Id="CLB" />
+                <Attribute Id="Club Name" />
+                <Attribute Id="Club Type" />
+                <Attribute Id="Current League Name" />
+                <Attribute Id="Is Current" />
+                <Attribute Id="Previous League Name" />
+                <Attribute Id="Stadium Capacity Band" />
+                <Attribute Id="Stadium Name" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Confederation" Expanded="false">
+              <Attributes>
+                <Attribute Id="Confederation" />
+              </Attributes>
+              <Position x="298" y="20" />
+            </Shape>
+            <Shape Id="Country Name" Expanded="false">
+              <Attributes>
+                <Attribute Id="Country Name" />
+              </Attributes>
+              <Position x="577" y="20" />
+            </Shape>
+            <Shape Id="Club Key" Expanded="false">
+              <Attributes>
+                <Attribute Id="Club Key" />
+              </Attributes>
+              <Position x="856" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="4a13013a-8388-46f8-9e25-f08b68875204">
+    <DataSourceViewID>Football DWH</DataSourceViewID>
+  </Source>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="d8e6c560-6719-42d0-9c96-df480b5527bb">
+      <ID>CLB</ID>
+      <Name>CLB</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="08c4755d-99c6-402f-9d08-9b928e072348">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="917c61eb-41f2-454c-8fb6-39d29beda7df">
+            <TableID>dbo_dim_club</TableID>
+            <ColumnID>club_key</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="156bcc74-eeaf-41e6-9e74-5068741bdc46">
+        <DataType>WChar</DataType>
+        <DataSize>200</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="37b21a5e-356d-4eac-8cae-c742ff54bb45">
+          <TableID>dbo_dim_club</TableID>
+          <ColumnID>club_name</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="2333f265-5bb8-4d88-bc1b-2f8fd1a5aa2a">
+          <AttributeID>Club Name</AttributeID>
+          <Name>Club Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9cd5439c-7ca7-49b9-85d5-4e69097267c0">
+          <AttributeID>Club Type</AttributeID>
+          <Name>Club Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f5b0b80b-73a1-46ab-bd8e-ef2e2a360f5d">
+          <AttributeID>Current League Name</AttributeID>
+          <Name>Current League Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="dacbaa2a-ab4e-425e-8211-ee3e977cd8d0">
+          <AttributeID>Previous League Name</AttributeID>
+          <Name>Previous League Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="15da15c6-9246-4a32-bd86-efc9cd013727">
+          <AttributeID>Stadium Name</AttributeID>
+          <Name>Stadium Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4f235988-0a3a-4842-9586-9582918e8d4c">
+          <AttributeID>Stadium Capacity Band</AttributeID>
+          <Name>Stadium Capacity Band</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="35d94260-d6b9-4439-bae8-35bc844f00ad">
+          <AttributeID>Is Current</AttributeID>
+          <Name>Is Current</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1e38dde3-c5c7-432f-81fc-a57bca23755a"><AttributeID>Country Name</AttributeID><Name>Quốc gia</Name></AttributeRelationship></AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="639edb9f-6577-477e-8b81-b1c111493363">
+      <ID>Club Name</ID>
+      <Name>Tên CLB</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ccd6524f-f4e2-4e86-8dc3-df8b699ef948">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7b91da7b-ec98-4dd0-b8f7-c3d548c04208">
+            <TableID>dbo_dim_club</TableID>
+            <ColumnID>club_name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4a5033c7-02d8-4eef-89d4-60befa804131">
+      <ID>Club Type</ID>
+      <Name>Loại CLB</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a87af701-b5ec-46d1-826e-26b9e1469dfa">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="44866f59-d51a-469d-8abc-a36dc1424684">
+            <TableID>dbo_dim_club</TableID>
+            <ColumnID>club_type</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="dadda63a-9fd5-46c8-a092-c6a9c05b3222">
+      <ID>Country Name</ID>
+      <Name>Quốc gia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="fab583fd-fc97-4204-b882-123c60572679">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b0d15aeb-8cf0-4448-ac65-f7324d6c96fe">
+            <TableID>dbo_dim_club</TableID>
+            <ColumnID>country_name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="788cf928-6a52-4c14-a3c5-68a7cdc91491"><AttributeID>Confederation</AttributeID><Name>Liên đoàn</Name></AttributeRelationship></AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3ded793e-a517-4ed3-be5a-967a8a3e559e">
+      <ID>Confederation</ID>
+      <Name>Liên đoàn</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0e891401-fcc1-4d06-8676-dd34c3ef13eb">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="41de3dfa-92a2-4cca-8fb2-5108ed0ef568">
+            <TableID>dbo_dim_club</TableID>
+            <ColumnID>confederation</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b5cc41c0-dc58-4bb3-adaa-4e3c3d9771b6">
+      <ID>Current League Name</ID>
+      <Name>Giải hiện tại</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3613e46f-ef93-419a-85cd-72d5e4f89462">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8ed61822-dad0-41e5-af10-8b3173daada3">
+            <TableID>dbo_dim_club</TableID>
+            <ColumnID>current_league_name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="82d10c33-1642-4f01-ae85-d0a88d4c855b">
+      <ID>Previous League Name</ID>
+      <Name>Giải mùa trước</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9e776084-e142-4dd2-bf5b-3f5b72e992db">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b93f9e53-37a0-4d5d-a0e9-de8e3f6513f1">
+            <TableID>dbo_dim_club</TableID>
+            <ColumnID>previous_league_name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bcc4a289-e697-4036-a217-bc61872f600e">
+      <ID>Stadium Name</ID>
+      <Name>Sân nhà</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="04472d46-10bb-4c06-b7be-f364cc896c20">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="153554c1-efa0-4094-b914-17afdd84f893">
+            <TableID>dbo_dim_club</TableID>
+            <ColumnID>stadium_name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="55705f1d-2fa3-4a39-8ed8-827ffea1c2cf">
+      <ID>Stadium Capacity Band</ID>
+      <Name>Sức chứa sân</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="16665c91-a318-445c-bc98-26b2c6158e9e">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3e14a780-3dd2-403a-a612-8cfe35e28509">
+            <TableID>dbo_dim_club</TableID>
+            <ColumnID>stadium_capacity_band</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ca7645c7-8678-4a64-b195-ee194e16add1">
+      <ID>Is Current</ID>
+      <Name>Phiên bản hiện tại</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7f55d783-0544-428d-9e39-a0fabc3a8fea">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2660376e-51a7-4775-968a-e843d17465f2">
+            <TableID>dbo_dim_club</TableID>
+            <ColumnID>is_current</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="72135897-4d8b-44bc-96df-ee51af7ff89c">
+      <ID>Hierarchy</ID>
+      <Name>Liên đoàn - Quốc gia - CLB</Name>
+      <Levels>
+        <Level dwd:design-time-name="e453cef6-1e50-432d-ae45-f9c377d780a7">
+          <ID>Confederation</ID>
+          <Name>Liên đoàn</Name>
+          <SourceAttributeID>Confederation</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="a0f87d5a-6007-47ff-9179-bec510e67bd5">
+          <ID>Country Name</ID>
+          <Name>Quốc gia</Name>
+          <SourceAttributeID>Country Name</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="43e3dba4-4425-4819-8909-2046e3a15693">
+          <ID>Club Key</ID>
+          <Name>CLB</Name>
+          <SourceAttributeID>CLB</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ProactiveCaching dwd:design-time-name="b9645a3b-dfb2-49cf-bca9-079cd5127e4b">
+    <SilenceInterval>-PT1S</SilenceInterval>
+    <Latency>-PT1S</Latency>
+    <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+    <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+    <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="5a47c546-77e8-47ad-8aed-28b3a017a133" />
+  </ProactiveCaching>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

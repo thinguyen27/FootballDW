@@ -1,0 +1,145 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>Football_DAWH_SSAS</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>FySFyrcQoWwURc3MtZhUcOZ8bgE=10/24/2026 4:56:54 PM10/24/2026 4:56:54 PM</TimeStamp>
+        <ID>
+          <String>Football DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>iAIj+3CRQ4dRoc4lcO1+RsKTM4s=11/2/2026 4:12:31 PM10/21/2026 8:36:27 AM</TimeStamp>
+        <ID>
+          <String>Football DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>2w8Ag+a+xLDizCkuQF5teUQjDDM=10/18/2026 11:52:18 PM10/18/2026 11:52:18 PM</TimeStamp>
+        <ID>
+          <String>Ngay</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>kP1nS0XMYtLS0v5bngMQ7v316sY=10/18/2026 11:52:18 PM10/18/2026 11:52:18 PM</TimeStamp>
+        <ID>
+          <String>Mua giai</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>RJt2/BUbSFeeziqtvXxnyC8Uto0=10/25/2026 12:11:13 AM10/21/2026 8:36:27 AM</TimeStamp>
+        <ID>
+          <String>Giai dau</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>lpkvZ3NOIH0TvdOnQ8glmGHI9dw=10/24/2026 5:13:49 PM10/21/2026 8:36:27 AM</TimeStamp>
+        <ID>
+          <String>Tran dau</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>ULq4ghll31yWDMEDGbh11W9N+Ck=10/25/2026 12:11:13 AM10/21/2026 8:36:27 AM</TimeStamp>
+        <ID>
+          <String>HLV</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>MQov4SO79PBjx/SO6xjXk9zgml8=10/25/2026 12:11:13 AM10/21/2026 8:36:27 AM</TimeStamp>
+        <ID>
+          <String>CLB</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>IVkSJWBXHnasLLBxcwcNgSfKN6g=10/24/2026 5:13:59 PM10/21/2026 8:36:27 AM</TimeStamp>
+        <ID>
+          <String>Cau thu</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>XOo0jPIEKUx3Y3wTuSTRGQqKPUo=10/19/2026 1:18:20 AM10/19/2026 1:18:20 AM</TimeStamp>
+        <ID>
+          <String>Loai chuyen nhuong</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>hvqsJkJoqPsFSyljE6oHzhcIZv0=10/19/2026 1:18:20 AM10/19/2026 1:18:20 AM</TimeStamp>
+        <ID>
+          <String>Tuoi</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>sG3Hz7tzP1JqpzE/szs6VCI2/AQ=11/2/2026 4:13:11 PM10/21/2026 8:36:27 AM9Gej12Eg5JS6RO+ofm0q/yFPjQo=10/18/2026 11:52:18 PM10/18/2026 11:52:18 PM</TimeStamp>
+        <ID>
+          <String>Football DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>C7oNbxQBxs7vt4Ss8aAUaSNO+hc=11/2/2026 5:59:58 PM10/21/2026 8:36:27 AMcDtDC+lonhb64o3NpqCtSK/xs2o=10/19/2026 1:18:20 AM10/19/2026 1:18:20 AM</TimeStamp>
+        <ID>
+          <String>Thi truong cau thu</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>bwdydtPM/YuJ/WvYfL2yxCGPZxs=10/25/2026 12:11:13 AM10/24/2026 4:56:55 PMuqgo2RXXy1la3ctRn0ZoiEv0oK4=10/24/2026 4:56:55 PM10/24/2026 4:56:55 PM</TimeStamp>
+        <ID>
+          <String>Hieu suat doi bong</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>zRfBp0h5j2iAJ6op43p3E2m2V7k=10/25/2026 12:11:13 AM10/24/2026 4:56:54 PMfQz0Brr2z4x007JMZ3zFHCgOwVk=10/24/2026 4:56:55 PM10/24/2026 4:56:55 PM</TimeStamp>
+        <ID>
+          <String>Hieu suat cau thu</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>OlXI2PfFkH5c+tOTO/C7h+0CeYk=11/2/2026 1:54:32 PM11/2/2026 1:54:32 PMKEB0+7WbXBH7ysxbZaYXnhv9FEk=11/2/2026 1:54:32 PM11/2/2026 1:54:32 PM</TimeStamp>
+        <ID>
+          <String>Ky luat va Trong tai</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>IayPWJhNZoeYy1xuGLCEWvXK/ls=10/18/2026 11:52:18 PM10/18/2026 11:52:18 PM</TimeStamp>
+      <ID>
+        <String>Football_DAWH_SSAS</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2026-11-03T16:10:33.116667Z</LastDeployed>
+</DeploymentSnapshot>
